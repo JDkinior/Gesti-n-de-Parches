@@ -34,6 +34,10 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        .text-muted {
+            color: rgba(226, 232, 240, 0.72) !important;
+        }
+
         /* Navbar moderno */
         .navbar {
             background: rgba(15, 23, 42, 0.95) !important;
@@ -91,6 +95,8 @@
             background: rgba(30, 41, 59, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(226, 232, 240, 0.1);
+            position: relative;
+            overflow: hidden;
             transition: all 0.3s ease;
         }
 
@@ -115,6 +121,22 @@
             background: rgba(30, 41, 59, 0.8) !important;
             border: 1px solid rgba(226, 232, 240, 0.1) !important;
             color: #e2e8f0 !important;
+        }
+
+        .card-soft > .card-header:first-child {
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+
+        .card-soft > .card-body:last-child {
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+
+        .card-soft .table-responsive {
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            overflow: hidden;
         }
 
         /* Botones modernos */
@@ -304,18 +326,20 @@
         /* KPI Cards */
         .kpi-card {
             position: relative;
-            overflow: hidden;
         }
 
-        .kpi-card::before {
+        .kpi-card::after {
             content: '';
             position: absolute;
             top: 0;
-            right: -50px;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
+            bottom: 0;
+            left: 0;
+            width: 4px;
+            background: var(--kpi-accent, #0ea5e9);
+        }
+
+        .kpi-card::before {
+            content: none;
         }
 
         .kpi-card .display-6 {

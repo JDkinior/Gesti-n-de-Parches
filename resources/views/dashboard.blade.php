@@ -30,7 +30,7 @@
     <!-- KPIs Row -->
     <div class="row g-4 mb-5">
         <div class="col-12 col-md-6 col-xl-3">
-            <div class="card card-soft" style="border-left: 4px solid #0ea5e9;">
+            <div class="card card-soft kpi-card" style="--kpi-accent: #0ea5e9;">
                 <div class="card-body p-4">
                     <div class="d-flex justify-content-between align-items-start">
                         <div>
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-xl-3">
-            <div class="card card-soft" style="border-left: 4px solid #10b981;">
+            <div class="card card-soft kpi-card" style="--kpi-accent: #10b981;">
                 <div class="card-body p-4">
                     <div class="d-flex justify-content-between align-items-start">
                         <div>
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-xl-3">
-            <div class="card card-soft" style="border-left: 4px solid #f97316;">
+            <div class="card card-soft kpi-card" style="--kpi-accent: #f97316;">
                 <div class="card-body p-4">
                     <div class="d-flex justify-content-between align-items-start">
                         <div>
@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-xl-3">
-            <div class="card card-soft" style="border-left: 4px solid #ef4444;">
+            <div class="card card-soft kpi-card" style="--kpi-accent: #ef4444;">
                 <div class="card-body p-4">
                     <div class="d-flex justify-content-between align-items-start">
                         <div>

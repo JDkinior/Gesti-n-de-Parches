@@ -8,7 +8,7 @@
         <h1 class="h3 fw-800 mb-1">
             <i class="fas fa-plus-circle"></i> Registrar Nuevo Sistema
         </h1>
-        <p class="text-muted">Completa el formulario para añadir un nuevo sistema al inventario de tu organización.</p>
+        <p class="text-light mb-0">Completa el formulario para añadir un nuevo sistema al inventario de tu organización.</p>
     </div>
 
     <div class="card card-soft">
