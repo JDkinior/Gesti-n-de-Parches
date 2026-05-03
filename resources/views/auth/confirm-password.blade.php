@@ -1,5 +1,11 @@
 <x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
+    <div class="mb-6 pb-6 border-b border-gray-300 dark:border-gray-600">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Confirmar Contraseña</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Por seguridad, confirma tu contraseña</p>
+    </div>
+
+    <div class="mb-6 p-4 rounded-lg bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 text-sm text-blue-700 dark:text-blue-300">
+        <i class="fas fa-shield-alt mr-2"></i>
         {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
     </div>
 
@@ -7,21 +13,14 @@
         @csrf
 
         <!-- Password -->
-        <div>
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        <div class="form-group mb-6">
+            <x-input-label for="password" value="Contraseña" />
+            <x-text-input id="password" type="password" name="password" required autocomplete="current-password" placeholder="••••••••" />
+            <x-input-error :messages="$errors->get('password')" />
         </div>
 
-        <div class="flex justify-end mt-4">
-            <x-primary-button>
-                {{ __('Confirm') }}
-            </x-primary-button>
-        </div>
+        <x-primary-button>
+            <i class="fas fa-check mr-2"></i>{{ __('Confirm') }}
+        </x-primary-button>
     </form>
 </x-guest-layout>

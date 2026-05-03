@@ -7,8 +7,8 @@
 @section('content')
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-5">
         <div>
-            <h1 class="h2 mb-2 fw-800" style="color: #f8fafc;">
-                <i class="fas fa-chart-line" style="color: #0ea5e9;\"></i> Panel de Control
+            <h1 class="h2 mb-2 fw-800 text-white">
+                <i class="fas fa-chart-line"></i> Panel de Control
             </h1>
             <p class="mb-0" style="color: #f1f5f9;">Visibilidad en tiempo real del estado de sistemas y riesgo de seguridad.</p>
         </div>
@@ -35,7 +35,7 @@
                     <div class="d-flex justify-content-between align-items-start">
                         <div>
                             <h6 class="mb-3" style="font-size: 0.875rem; color: rgba(226, 232, 240, 0.7); font-weight: 600;">
-                                <i class="fas fa-cube" style="color: #0ea5e9;"></i> Total Sistemas
+                                <i class="fas fa-cube"></i> Total Sistemas
                             </h6>
                             <p class="display-6 fw-800 mb-0" style="color: #f8fafc;">{{ $stats['total_systems'] }}</p>
                         </div>
@@ -50,7 +50,7 @@
                     <div class="d-flex justify-content-between align-items-start">
                         <div>
                             <h6 class="mb-3" style="font-size: 0.875rem; color: rgba(226, 232, 240, 0.7); font-weight: 600;">
-                                <i class="fas fa-clipboard-check" style="color: #10b981;"></i> Documentados
+                                <i class="fas fa-clipboard-check"></i> Documentados
                             </h6>
                             <p class="display-6 fw-800 mb-0" style="color: #f8fafc;">{{ $stats['documented_systems'] }}</p>
                         </div>
@@ -65,7 +65,7 @@
                     <div class="d-flex justify-content-between align-items-start">
                         <div>
                             <h6 class="mb-3" style="font-size: 0.875rem; color: rgba(226, 232, 240, 0.7); font-weight: 600;">
-                                <i class="fas fa-clock" style="color: #f97316;"></i> Desactualizados
+                                <i class="fas fa-clock"></i> Desactualizados
                             </h6>
                             <p class="display-6 fw-800 mb-0" style="color: #f8fafc;">{{ $stats['outdated_systems'] }}</p>
                         </div>
@@ -82,7 +82,7 @@
                     <div class="d-flex justify-content-between align-items-start">
                         <div>
                             <h6 class="mb-3" style="font-size: 0.875rem; color: rgba(226, 232, 240, 0.7); font-weight: 600;">
-                                <i class="fas fa-exclamation-triangle" style="color: #ef4444;"></i> Riesgo Crítico
+                                <i class="fas fa-exclamation-triangle"></i> Riesgo Crítico
                             </h6>
                             <p class="display-6 fw-800 mb-0" style="color: #f8fafc;">{{ $stats['critical_risk_systems'] }}</p>
                         </div>
@@ -101,7 +101,7 @@
             <div class="card card-soft h-100">
                 <div class="card-header">
                     <h5 class="mb-0" style="color: #f1f5f9;">
-                        <i class="fas fa-pie-chart" style="color: #0ea5e9;"></i> Distribución por Nivel de Riesgo
+                        <i class="fas fa-pie-chart"></i> Distribución por Nivel de Riesgo
                     </h5>
                 </div>
                 <div class="card-body">
@@ -115,7 +115,7 @@
             <div class="card card-soft h-100">
                 <div class="card-header">
                     <h5 class="mb-0" style="color: #f1f5f9;">
-                        <i class="fas fa-bar-chart" style="color: #10b981;"></i> Estado de Sistemas
+                        <i class="fas fa-bar-chart"></i> Estado de Sistemas
                     </h5>
                 </div>
                 <div class="card-body" style="display: flex; flex-direction: column; gap: 1rem; justify-content: center;">
@@ -142,7 +142,7 @@
             <div class="card card-soft h-100">
                 <div class="card-header">
                     <h5 class="mb-0" style="color: #f1f5f9;">
-                        <i class="fas fa-line-chart" style="color: #ef4444;"></i> Tendencia de Sistemas Críticos (7 días)
+                        <i class="fas fa-line-chart"></i> Tendencia de Sistemas Críticos (7 días)
                     </h5>
                 </div>
                 <div class="card-body">
@@ -156,7 +156,7 @@
             <div class="card card-soft h-100">
                 <div class="card-header">
                     <h5 class="mb-0" style="color: #f1f5f9;">
-                        <i class="fas fa-file-check" style="color: #0ea5e9;"></i> Porcentaje de Documentación
+                        <i class="fas fa-file-check"></i> Porcentaje de Documentación
                     </h5>
                 </div>
                 <div class="card-body">
@@ -172,7 +172,7 @@
     <div class="card card-soft mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0" style="color: #f1f5f9;">
-                <i class="fas fa-history" style="color: #0ea5e9;"></i> Últimos Sistemas Registrados
+                <i class="fas fa-history"></i> Últimos Sistemas Registrados
             </h5>
             <small style="color: rgba(226, 232, 240, 0.6);">Últimas 5 entradas</small>
         </div>
@@ -180,12 +180,12 @@
             <table class="table mb-0 align-middle" style="color: #e2e8f0; background: rgba(30, 41, 59, 0.8);">
                 <thead style="background: rgba(51, 65, 85, 0.6); border-bottom: 2px solid rgba(226, 232, 240, 0.1);">
                     <tr>
-                        <th style="color: #f1f5f9;"><i class="fas fa-box-open" style="color: #0ea5e9;"></i> Sistema</th>
-                        <th style="color: #f1f5f9;"><i class="fas fa-code-branch" style="color: #0ea5e9;"></i> V. Actual</th>
-                        <th style="color: #f1f5f9;"><i class="fas fa-arrow-right" style="color: #0ea5e9;"></i> V. Objetivo</th>
-                        <th style="color: #f1f5f9;"><i class="fas fa-exclamation" style="color: #f97316;"></i> Riesgo</th>
-                        <th style="color: #f1f5f9;"><i class="fas fa-signal" style="color: #10b981;"></i> Estado</th>
-                        <th class="text-end" style="color: #f1f5f9;"><i class="fas fa-cogs" style="color: #0ea5e9;"></i> Acciones</th>
+                        <th style="color: #f1f5f9;"><i class="fas fa-box-open"></i> Sistema</th>
+                        <th style="color: #f1f5f9;"><i class="fas fa-code-branch"></i> V. Actual</th>
+                        <th style="color: #f1f5f9;"><i class="fas fa-arrow-right"></i> V. Objetivo</th>
+                        <th style="color: #f1f5f9;"><i class="fas fa-exclamation"></i> Riesgo</th>
+                        <th style="color: #f1f5f9;"><i class="fas fa-signal"></i> Estado</th>
+                        <th class="text-end" style="color: #f1f5f9;"><i class="fas fa-cogs"></i> Acciones</th>
                     </tr>
                 </thead>
                 <tbody id="latestSystemsBody">

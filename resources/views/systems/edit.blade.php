@@ -6,9 +6,9 @@
             <i class="fas fa-arrow-left"></i> Volver
         </a>
         <h1 class="h3 fw-800 mb-1">
-            <i class="fas fa-edit text-warning"></i> Editar Sistema
+            <i class="fas fa-edit"></i> Editar Sistema
         </h1>
-        <p class="text-muted">Actualiza la información del sistema: {{ $system->name }}</p>
+        <p class="text-light mb-0">Actualiza la información del sistema: {{ $system->name }}</p>
     </div>
 
     <div class="card card-soft">

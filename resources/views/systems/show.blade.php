@@ -7,9 +7,9 @@
                 <i class="fas fa-arrow-left"></i> Volver
             </a>
             <h1 class="h2 fw-800 mb-1">
-                <i class="fas fa-cube text-primary"></i> {{ $system->name }}
+                <i class="fas fa-cube"></i> {{ $system->name }}
             </h1>
-            <p class="text-muted">Detalles y estado actual del sistema</p>
+            <p class="text-white-50 mb-0">Detalles y estado actual del sistema</p>
         </div>
         <div class="d-flex gap-2">
             @can('update', $system)
@@ -33,25 +33,25 @@
         <div class="col-12 col-lg-8">
             <div class="card card-soft">
                 <div class="card-header">
-                    <h5 class="mb-0"><i class="fas fa-info-circle text-info"></i> Información General</h5>
+                    <h5 class="mb-0"><i class="fas fa-info-circle"></i> Información General</h5>
                 </div>
                 <div class="card-body">
                     <div class="row g-3">
                         <div class="col-12 col-md-6">
-                            <h6 class="text-muted mb-2"><i class="fas fa-user-circle"></i> Responsable</h6>
-                            <p class="fs-5 fw-600">{{ $system->owner ?: 'Sin asignar' }}</p>
+                            <h6 class="text-white-50 mb-2"><i class="fas fa-user-circle"></i> Responsable</h6>
+                            <p class="fs-5 fw-semibold text-white mb-0">{{ $system->owner ?: 'Sin asignar' }}</p>
                         </div>
                         <div class="col-12 col-md-6">
-                            <h6 class="text-muted mb-2"><i class="fas fa-user"></i> Creado Por</h6>
-                            <p class="fs-5 fw-600">{{ $system->creator?->name }}</p>
+                            <h6 class="text-white-50 mb-2"><i class="fas fa-user"></i> Creado Por</h6>
+                            <p class="fs-5 fw-semibold text-white mb-0">{{ $system->creator?->name }}</p>
                         </div>
                         <div class="col-12 col-md-6">
-                            <h6 class="text-muted mb-2"><i class="fas fa-calendar-alt"></i> Fecha de Creación</h6>
-                            <p class="fs-5 fw-600">{{ $system->created_at->format('d/m/Y H:i') }}</p>
+                            <h6 class="text-white-50 mb-2"><i class="fas fa-calendar-alt"></i> Fecha de Creación</h6>
+                            <p class="fs-5 fw-semibold text-white mb-0">{{ $system->created_at->format('d/m/Y H:i') }}</p>
                         </div>
                         <div class="col-12 col-md-6">
-                            <h6 class="text-muted mb-2"><i class="fas fa-sync-alt"></i> Última Actualización</h6>
-                            <p class="fs-5 fw-600">{{ $system->updated_at->format('d/m/Y H:i') }}</p>
+                            <h6 class="text-white-50 mb-2"><i class="fas fa-sync-alt"></i> Última Actualización</h6>
+                            <p class="fs-5 fw-semibold text-white mb-0">{{ $system->updated_at->format('d/m/Y H:i') }}</p>
                         </div>
                     </div>
                 </div>
@@ -61,11 +61,11 @@
         <div class="col-12 col-lg-4">
             <div class="card card-soft">
                 <div class="card-header">
-                    <h5 class="mb-0"><i class="fas fa-exclamation-triangle text-danger"></i> Estado y Riesgo</h5>
+                    <h5 class="mb-0"><i class="fas fa-exclamation-triangle"></i> Estado y Riesgo</h5>
                 </div>
                 <div class="card-body text-center">
                     <div class="mb-3">
-                        <h6 class="text-muted mb-2">Riesgo</h6>
+                        <h6 class="text-white-50 mb-2">Riesgo</h6>
                         @php
                             $riskBg = match($system->risk_level) {
                                 'critical' => 'danger',
@@ -80,8 +80,8 @@
                     </div>
                     <hr>
                     <div>
-                        <h6 class="text-muted mb-2">Estado</h6>
-                        <span class="badge bg-light text-dark p-3 fs-6 rounded-pill">
+                        <h6 class="text-secondary-emphasis mb-2">Estado</h6>
+                        <span class="badge bg-light text-dark border border-secondary p-3 fs-6 rounded-pill">
                             {{ ucfirst($system->status) }}
                         </span>
                     </div>
@@ -94,16 +94,16 @@
         <div class="col-12 col-md-6">
             <div class="card card-soft">
                 <div class="card-header">
-                    <h5 class="mb-0"><i class="fas fa-code-branch text-success"></i> Versiones</h5>
+                    <h5 class="mb-0"><i class="fas fa-code-branch"></i> Versiones</h5>
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
-                        <h6 class="text-muted mb-2">Versión Actual Instalada</h6>
-                        <code class="fs-5 bg-light p-2 rounded d-block">{{ $system->current_version }}</code>
+                        <h6 class="text-white-50 mb-2">Versión Actual Instalada</h6>
+                        <code class="fs-5 d-block px-3 py-2 rounded border border-secondary bg-dark text-info">{{ $system->current_version }}</code>
                     </div>
                     <div>
-                        <h6 class="text-muted mb-2">Versión Objetivo / Recomendada</h6>
-                        <code class="fs-5 bg-light p-2 rounded d-block">{{ $system->latest_version }}</code>
+                        <h6 class="text-white-50 mb-2">Versión Objetivo / Recomendada</h6>
+                        <code class="fs-5 d-block px-3 py-2 rounded border border-secondary bg-dark text-info">{{ $system->latest_version }}</code>
                     </div>
                 </div>
             </div>
@@ -112,10 +112,10 @@
         <div class="col-12 col-md-6">
             <div class="card card-soft">
                 <div class="card-header">
-                    <h5 class="mb-0"><i class="fas fa-file-check text-info"></i> Documentación</h5>
+                    <h5 class="mb-0"><i class="fas fa-file-check"></i> Documentación</h5>
                 </div>
                 <div class="card-body">
-                    <h6 class="text-muted mb-3">¿Está Documentado?</h6>
+                    <h6 class="text-white-50 mb-3">¿Está Documentado?</h6>
                     @if($system->is_documented)
                         <div class="alert alert-success mb-0">
                             <i class="fas fa-check-circle"></i> Sí, está documentado internamente
@@ -132,13 +132,13 @@
 
     <div class="card card-soft">
         <div class="card-header">
-            <h5 class="mb-0"><i class="fas fa-sticky-note text-warning"></i> Notas y Observaciones</h5>
+            <h5 class="mb-0"><i class="fas fa-sticky-note"></i> Notas y Observaciones</h5>
         </div>
         <div class="card-body">
             @if($system->notes)
-                <p class="mb-0">{{ nl2br(e($system->notes)) }}</p>
+                <p class="mb-0 text-light">{{ nl2br(e($system->notes)) }}</p>
             @else
-                <p class="text-muted mb-0"><i class="fas fa-inbox"></i> Sin observaciones registradas</p>
+                <p class="text-white-50 mb-0"><i class="fas fa-inbox"></i> Sin observaciones registradas</p>
             @endif
         </div>
     </div>

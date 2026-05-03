@@ -28,7 +28,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background-color: #0f172a;
             min-height: 100vh;
             color: #e2e8f0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -102,8 +102,19 @@
 
         .card-header {
             border-bottom: 1px solid rgba(226, 232, 240, 0.1) !important;
-            background: transparent !important;
-            color: #f8fafc;
+            background: rgba(30, 41, 59, 0.8) !important;
+            color: #f8fafc !important;
+        }
+
+        .card-body {
+            background: rgba(30, 41, 59, 0.8) !important;
+            color: #e2e8f0 !important;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.8) !important;
+            border: 1px solid rgba(226, 232, 240, 0.1) !important;
+            color: #e2e8f0 !important;
         }
 
         /* Botones modernos */
@@ -116,14 +127,16 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+            background-color: #0ea5e9;
+            box-shadow: 0 2px 8px rgba(14, 165, 233, 0.2);
             color: #ffffff;
+            border: none;
         }
 
         .btn-primary:hover {
-            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
-            transform: translateY(-2px);
+            background-color: #0284c7;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+            transform: translateY(-1px);
         }
 
         .btn-outline-secondary {
@@ -141,6 +154,35 @@
             font-size: 0.85rem;
         }
 
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.75rem;
+            height: 2.75rem;
+            padding: 0 0.85rem;
+            border: 0;
+            line-height: 1;
+        }
+
+        .action-btn-view {
+            border-top-left-radius: 0.65rem !important;
+            border-bottom-left-radius: 0.65rem !important;
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        .action-btn-middle {
+            border-radius: 0 !important;
+        }
+
+        .action-btn-delete {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+            border-top-right-radius: 0.65rem !important;
+            border-bottom-right-radius: 0.65rem !important;
+        }
+
         /* Badges mejorados */
         .badge {
             border-radius: 20px;
@@ -151,41 +193,44 @@
 
         /* Tablas mejoradas */
         .table {
-            color: #e2e8f0;
+            color: #e2e8f0 !important;
             border-collapse: separate;
             border-spacing: 0 8px;
+            background: rgba(30, 41, 59, 0.8) !important;
         }
 
         .table thead {
-            background: transparent;
+            background: rgba(51, 65, 85, 0.6) !important;
         }
 
         .table thead th {
             border: none;
-            color: #f8fafc;
+            color: #f8fafc !important;
             font-weight: 700;
             text-transform: uppercase;
             font-size: 0.75rem;
             letter-spacing: 0.05rem;
-            background: rgba(51, 65, 85, 0.6);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.1);
+            background: rgba(51, 65, 85, 0.6) !important;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.1) !important;
         }
 
         .table tbody tr {
-            background: transparent;
+            background: rgba(30, 41, 59, 0.6) !important;
             border-radius: 8px;
-            border: 1px solid rgba(226, 232, 240, 0.05);
+            border: 1px solid rgba(226, 232, 240, 0.1) !important;
             transition: all 0.2s ease;
         }
 
         .table tbody tr:hover {
-            background: rgba(51, 65, 85, 0.4);
+            background: rgba(51, 65, 85, 0.5) !important;
         }
 
         .table tbody td {
-            border: none;
+            border: none !important;
             padding: 1rem;
             vertical-align: middle;
+            color: #e2e8f0 !important;
+            background: rgba(30, 41, 59, 0.6) !important;
         }
 
         .table tbody td:first-child {
@@ -333,30 +378,38 @@
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
-                            <i class="fas fa-chart-line"></i> Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('systems.*') ? 'active' : '' }}" href="{{ route('systems.index') }}">
-                            <i class="fas fa-server"></i> Sistemas
-                        </a>
-                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                                <i class="fas fa-chart-line"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('systems.*') ? 'active' : '' }}" href="{{ route('systems.index') }}">
+                                <i class="fas fa-server"></i> Sistemas
+                            </a>
+                        </li>
+                    @endauth
                 </ul>
 
                 <div class="d-flex align-items-center gap-3">
-                    <div class="user-menu d-flex align-items-center gap-2">
-                        <i class="fas fa-user-circle"></i>
-                        <span class="text-white">{{ auth()->user()->name }}</span>
-                        <span class="badge text-bg-light" style="color: #667eea !important;">{{ auth()->user()->role }}</span>
-                    </div>
-                    <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                        @csrf
-                        <button type="submit" class="btn btn-sm btn-outline-light">
-                            <i class="fas fa-sign-out-alt"></i> Salir
-                        </button>
-                    </form>
+                    @auth
+                        <div class="user-menu d-flex align-items-center gap-2">
+                            <i class="fas fa-user-circle"></i>
+                            <span class="text-white">{{ auth()->user()->name }}</span>
+                            <span class="badge text-bg-light" style="color: #667eea !important;">{{ auth()->user()->role }}</span>
+                        </div>
+                        <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-outline-light">
+                                <i class="fas fa-sign-out-alt"></i> Salir
+                            </button>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="btn btn-sm btn-outline-light">
+                            <i class="fas fa-sign-in-alt"></i> Acceder
+                        </a>
+                    @endauth
                 </div>
             </div>
         </div>

@@ -4,9 +4,9 @@
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
         <div>
             <h1 class="h2 fw-800 mb-1">
-                <i class="fas fa-server text-primary"></i> Inventario de Sistemas
+                <i class="fas fa-server"></i> Inventario de Sistemas
             </h1>
-            <p class="text-muted mb-0">Gestiona versiones instaladas y prioridades de actualización en toda tu infraestructura.</p>
+            <p class="text-white-50 mb-0">Gestiona versiones instaladas y prioridades de actualización en toda tu infraestructura.</p>
         </div>
 
         @can('create', App\Models\System::class)
@@ -20,7 +20,7 @@
         <div class="card-body">
             <form method="GET" action="{{ route('systems.index') }}" class="row g-2 align-items-end">
                 <div class="col-12 col-md-8">
-                    <label for="search" class="form-label">
+                    <label for="search" class="form-label text-white-50">
                         <i class="fas fa-search"></i> Buscar Sistema
                     </label>
                     <input
@@ -47,7 +47,7 @@
     <div class="card card-soft">
         <div class="table-responsive">
             <table class="table align-middle mb-0">
-                <thead class="table-light">
+                <thead>
                     <tr>
                         <th><i class="fas fa-cube"></i> Sistema</th>
                         <th><i class="fas fa-user"></i> Responsable</th>
@@ -63,17 +63,17 @@
                     @forelse($systems as $system)
                         <tr>
                             <td>
-                                <strong>{{ $system->name }}</strong>
+                                <strong class="text-white">{{ $system->name }}</strong>
                             </td>
                             <td>
                                 @if($system->owner)
-                                    <span class="badge bg-light text-dark">{{ $system->owner }}</span>
+                                    <span class="badge bg-dark text-white border border-secondary">{{ $system->owner }}</span>
                                 @else
-                                    <span class="badge bg-secondary">Sin asignar</span>
+                                    <span class="badge bg-dark text-white border border-secondary">Sin asignar</span>
                                 @endif
                             </td>
-                            <td><code>{{ $system->current_version }}</code></td>
-                            <td><code>{{ $system->latest_version }}</code></td>
+                            <td><code class="text-info bg-dark border border-secondary px-2 py-1 rounded">{{ $system->current_version }}</code></td>
+                            <td><code class="text-info bg-dark border border-secondary px-2 py-1 rounded">{{ $system->latest_version }}</code></td>
                             <td>
                                 @php
                                     $riskBg = match($system->risk_level) {
@@ -93,7 +93,7 @@
                                         default => 'question-circle text-secondary'
                                     };
                                 @endphp
-                                <span><i class="fas fa-{{ $statusIcon }}"></i> {{ ucfirst($system->status) }}</span>
+                                <span class="text-light"><i class="fas fa-{{ $statusIcon }}"></i> {{ ucfirst($system->status) }}</span>
                             </td>
                             <td class="text-center">
                                 @if($system->is_documented)
@@ -104,11 +104,11 @@
                             </td>
                             <td class="text-end">
                                 <div class="btn-group btn-group-sm" role="group">
-                                    <a href="{{ route('systems.show', $system) }}" class="btn btn-primary" title="Ver detalles">
+                                    <a href="{{ route('systems.show', $system) }}" class="btn btn-primary action-btn action-btn-view" title="Ver detalles">
                                         <i class="fas fa-eye"></i>
                                     </a>
                                     @can('update', $system)
-                                        <a href="{{ route('systems.edit', $system) }}" class="btn btn-warning" title="Editar">
+                                        <a href="{{ route('systems.edit', $system) }}" class="btn btn-warning action-btn action-btn-middle" title="Editar">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     @endcan
@@ -116,7 +116,7 @@
                                         <form action="{{ route('systems.destroy', $system) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Confirma que desea eliminar este sistema?');">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger" title="Eliminar">
+                                            <button type="submit" class="btn btn-danger action-btn action-btn-delete" title="Eliminar">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </form>
@@ -126,7 +126,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="text-center py-5 text-muted">
+                            <td colspan="8" class="text-center py-5 text-white-50">
                                 <i class="fas fa-inbox fa-3x mb-3 opacity-50 d-block"></i>
                                 <p>No hay registros disponibles. <a href="{{ route('systems.create') }}">Crea el primero</a></p>
                             </td>
